@@ -1,0 +1,10 @@
+# REGEX - Any Digit
+my$conf={
+ComPortID=>'DUT4_GNSS',
+PortOpen=>'90'
+};
+
+print $conf->{'PortOpen'};
+print ($conf->{'ComPortID'} =~ /DUT(\d)_GNSS/);
+$conf->{'PortOpen'} = 1 if ($conf->{'ComPortID'}=~/DUT(\d)_GNSS/);
+print $conf->{'PortOpen'};
