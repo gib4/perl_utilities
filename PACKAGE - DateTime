@@ -1,0 +1,9 @@
+# Use Package DateTime
+use DateTime;
+
+my $dt       = DateTime->new(year => 1964);
+my $dt_now   = DateTime->now;
+my $dur      = $dt_now->subtract_datetime($dt);
+my @duration = $dur->in_units(qw(days months years));
+
+print $dt->dmy." <-------".join ("-",@duration)."-------> ".$dt_now->dmy('/');
